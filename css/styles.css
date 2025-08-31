@@ -462,3 +462,24 @@ body.login-page #spinner-wrapper .lds-ring{
 @media (max-width: 575.98px){
   #cat-list-container .list-group-item{ padding: 12px; }
 }
+
+/* ===== Pill usuario fijo en móvil / tablet ===== */
+.user-wrap .user-badge{
+  max-width: 40vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 991.98px){ /* tablets y móviles */
+  .user-wrap{
+    position: fixed;
+    top: 8px;
+    right: 8px;
+    z-index: 1040;           /* por encima del navbar */
+  }
+  .user-wrap .user-badge{ max-width: 56vw; }
+  .user-wrap .salir-btn{ padding: 4px 10px; font-size: .9rem; white-space: nowrap; }
+}
+@media (max-width: 575.98px){ /* móviles chicos */
+  .user-wrap .user-badge{ max-width: 62vw; font-size: .9rem; padding: 2px 8px; }
+  .user-wrap .salir-btn{ padding: 4px 8px; font-size: .85rem; }
+}

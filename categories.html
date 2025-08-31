@@ -20,7 +20,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <!-- SIEMPRE visible: correo + salir -->
+      <!-- ÚNICO: correo + salir siempre visibles -->
       <div class="user-wrap ms-auto d-flex align-items-center gap-2">
         <span id="usuarioActual" class="user-badge"></span>
         <button id="btnSalir" class="salir-btn">Salir</button>
@@ -37,11 +37,7 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
-            <!-- agregado: correo + botón salir a la derecha -->
-            <span id="usuarioActual" class="user-badge"></span>
-            <button id="btnSalir" class="salir-btn ms-2">Salir</button>
-          </li>
+          <!-- ❌ NO pongas otro botón/correo acá -->
         </ul>
       </div>
     </div>
@@ -95,7 +91,7 @@
   <footer class="text-muted">
     <div class="container">
       <p class="float-end"><a href="#">Volver arriba</a></p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jóvenes a Programar</a></p>
     </div>
   </footer>
 
@@ -107,7 +103,6 @@
   <script src="js/init.js"></script>
   <script src="js/categories.js"></script>
 
-  <!-- Pinta correo + salir (sin imports, 100% compatible con GitHub Pages) -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const badge = document.getElementById("usuarioActual");
@@ -116,7 +111,6 @@
       const btnSalir = document.getElementById("btnSalir");
       if (btnSalir) {
         btnSalir.addEventListener("click", function () {
-          // mismo efecto que cerrarSesion(): limpiar y volver al login
           sessionStorage.removeItem("sesionIniciada");
           sessionStorage.removeItem("usuario");
           location.href = "login.html";
@@ -125,5 +119,4 @@
     });
   </script>
 </body>
-
 </html>

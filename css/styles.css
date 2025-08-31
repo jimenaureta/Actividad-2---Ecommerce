@@ -397,3 +397,68 @@ body.login-page #spinner-wrapper .lds-ring{
   cursor: pointer;
 }
 .salir-btn:hover { filter: brightness(.95); }
+
+/* ===== Navbar: correo + salir responsive ===== */
+.navbar .user-badge{
+  max-width: 40vw;                 /* evita que tape contenido */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+.navbar .salir-btn{ white-space: nowrap; }
+
+/* <= LG (tableta vertical y móviles grandes) */
+@media (max-width: 991.98px){
+  .navbar .navbar-collapse{ padding-top: 6px; }
+  .navbar .d-flex.gap-2{ gap: 8px; }
+  .navbar .user-badge{ max-width: 55vw; }
+  .navbar .salir-btn{ padding: 5px 10px; font-size: 0.95rem; }
+}
+
+/* <= SM (móviles) */
+@media (max-width: 575.98px){
+  .navbar .d-flex.gap-2{
+    width: 100%;
+    justify-content: space-between; /* correo a izq, salir a der dentro del menú abierto */
+    gap: 6px;
+  }
+  .navbar .user-badge{
+    font-size: .9rem;
+    padding: 2px 8px;
+    max-width: 62vw;
+  }
+  .navbar .salir-btn{
+    padding: 4px 8px;
+    font-size: .85rem;
+  }
+}
+
+/* ====== Categories: controles responsive (orden + filtros) ====== */
+/* Hace que “A-Z / Z-A / cantidad” no se amontonen en móvil */
+@media (max-width: 767.98px){        /* <= MD */
+  /* Bloque de orden (A-Z, Z-A, cantidad) */
+  .btn-group-toggle{ width: 100%; display: flex; gap: 8px; justify-content: space-between; }
+  .btn-group-toggle .btn{ flex: 1 1 auto; }
+
+  /* Bloque de filtros por cantidad (min/max + botones) */
+  .col-lg-6.offset-lg-6.col-md-12 .row.container.p-0.m-0 > .col{
+    flex: 0 0 100%; max-width: 100%; margin-bottom: 8px;
+  }
+  .col-lg-6.offset-lg-6.col-md-12 .row.container.p-0.m-0 > .col-3.p-0{
+    flex: 0 0 100%; max-width: 100%;
+  }
+  .col-lg-6.offset-lg-6.col-md-12 .btn-group[role="group"]{
+    width: 100%;
+  }
+  .col-lg-6.offset-lg-6.col-md-12 .btn-group[role="group"] .btn{
+    width: 50%;
+  }
+
+  /* alineaciones */
+  .col.text-end{ text-align: left !important; }
+}
+
+/* Pequeños pulidos visuales */
+@media (max-width: 575.98px){
+  #cat-list-container .list-group-item{ padding: 12px; }
+}
